@@ -20,6 +20,7 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ReviewsComponent,
     OrderSummaryComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
