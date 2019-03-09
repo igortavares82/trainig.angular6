@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router'
 
 import { HomeComponent } from './home/home.component'
-import { AboutComponent } from './about/about.component'
 import { RestaurantsComponent } from './restaurants/restaurants.component'
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component'
 import { MenuComponent } from './restaurant-detail/menu/menu.component'
@@ -21,7 +20,7 @@ export const ROUTES: Routes = [
         { path:'reviews', component: ReviewsComponent }
     ]},
     { path: 'restaurants', component: RestaurantsComponent },
-    { path: 'order', loadChildren: './order/order.module#OrderModule', canLoad: [LoggedInGuard] },
+    { path: 'order', loadChildren: './order/order.module#OrderModule', canLoad: [LoggedInGuard], canActivate:[LoggedInGuard] },
     { path: 'order-summary', component: OrderSummaryComponent },
     { path: 'about', loadChildren: './about/about.module#AboutModule' },
     { path: '**', component: NotFoundComponent }

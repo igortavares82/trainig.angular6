@@ -10,7 +10,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     trigger('menuItemAppeared', [
       state('ready', style({opacity: 1})),
       transition('void => ready', [
-        style({opaciuty:0, transform: 'translate(-20px)'}),
+        style({opacity:0, transform: 'translate(-20px)'}),
         animate('500ms 0s ease-in')
       ])
     ])

@@ -5,13 +5,14 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms'
 import { Restaurant } from './restaurant/restaurant.model';
 import { RestaurantsService } from './restaurants.service';
 
-import 'rxjs/add/operator/switchMap'
-import 'rxjs/add/operator/do'
-import 'rxjs/add/operator/debounceTime'
-import 'rxjs/add/operator/distinctUntilChanged'
-import 'rxjs/add/operator/catch'
-import 'rxjs/add/observable/from'
-import { Observable } from 'rxjs/Observable'
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/from';
+
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'mt-restaurants',
@@ -20,7 +21,7 @@ import { Observable } from 'rxjs/Observable'
     trigger('toggleSearch', [
       state('hidden', style({
         opacity: 0,
-        "max-hight": "0px"
+        "max-height": "0px"
       })),
       state('visible', style({
         opacity: 1,
@@ -33,17 +34,16 @@ import { Observable } from 'rxjs/Observable'
 })
 export class RestaurantsComponent implements OnInit {
 
-  searchBarState = 'hidden'
+  searchBarState = 'hidden';
   restaurants: Restaurant[] = [];
 
   searchForm: FormGroup;
   searchControl: FormControl;
 
   constructor(private restaurantsService: RestaurantsService,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder) {  }
 
   ngOnInit() {
-
     this.searchControl = this.fb.control('');
     
     this.searchControl
@@ -62,6 +62,7 @@ export class RestaurantsComponent implements OnInit {
     this.restaurantsService
         .restaurants()
         .subscribe(restaurants => this.restaurants = restaurants);
+    
   }
 
   toggleSearch() {
